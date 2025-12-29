@@ -84,6 +84,45 @@ function App() {
     setCurrentPage(1);
   }, []);
 
+  const handleTryDemo = useCallback(async () => {
+    try {
+      setIsProcessing(true);
+      setError(null);
+      
+      // Fetch demo PDFs
+      const [originalResponse, modifiedResponse] = await Promise.all([
+        fetch('/demo-original.pdf'),
+        fetch('/demo-modified.pdf')
+      ]);
+      
+      const [originalBlob, modifiedBlob] = await Promise.all([
+        originalResponse.blob(),
+        modifiedResponse.blob()
+      ]);
+      
+      // Create File objects
+      const originalFile = new File([originalBlob], 'demo-original.pdf', { type: 'application/pdf' });
+      const modifiedFile = new File([modifiedBlob], 'demo-modified.pdf', { type: 'application/pdf' });
+      
+      // Set files
+      setOriginalFile(originalFile);
+      setModifiedFile(modifiedFile);
+      
+      // Process PDFs
+      const [originalDoc, modifiedDoc] = await Promise.all([
+        extractTextFromPDF(originalFile),
+        extractTextFromPDF(modifiedFile)
+      ]);
+      
+      setOriginalDoc(originalDoc);
+      setModifiedDoc(modifiedDoc);
+    } catch (err) {
+      setError('Failed to load demo PDFs. Please try again.');
+    } finally {
+      setIsProcessing(false);
+    }
+  }, []);
+
   const { diffParts, stats, totalPages, allPagesDiffs } = useMemo(() => {
     if (!originalDoc || !modifiedDoc) {
       return { diffParts: null, stats: null, totalPages: 0, allPagesDiffs: null };
@@ -191,6 +230,15 @@ function App() {
         )}
 
         <section className="upload-section">
+          <div className="upload-header">
+            <h2>Upload Documents</h2>
+            <button className="demo-btn" onClick={handleTryDemo} disabled={isProcessing}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+              Try Demo
+            </button>
+          </div>
           <div className="upload-grid">
             <PDFDropZone
               label="Original PDF"

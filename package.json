@@ -16,7 +16,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "generate-demos": "node scripts/generate-demo-pdfs.mjs"
   },
   "dependencies": {
     "diff": "^7.0.0",
