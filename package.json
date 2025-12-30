@@ -2,7 +2,16 @@
   "name": "pdf-diff",
   "version": "1.0.0",
   "description": "Compare PDF documents privately and securely in your browser. No uploads, no servers, just local processing.",
-  "keywords": ["pdf", "diff", "compare", "comparison", "document", "privacy", "secure", "client-side"],
+  "keywords": [
+    "pdf",
+    "diff",
+    "compare",
+    "comparison",
+    "document",
+    "privacy",
+    "secure",
+    "client-side"
+  ],
   "homepage": "https://www.pdf-diff.com",
   "repository": {
     "type": "git",
@@ -37,6 +46,7 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
+    "sharp": "^0.34.5",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
     "vite": "^7.2.4"
