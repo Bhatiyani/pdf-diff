@@ -1,6 +1,6 @@
 {
   "name": "@jamesmontemagno/pdf-diff",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Compare PDF documents privately and securely in your browser. No uploads, no servers, just local processing.",
   "keywords": [
     "pdf",
