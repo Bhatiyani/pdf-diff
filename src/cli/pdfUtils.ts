@@ -32,11 +32,11 @@ export async function extractTextFromPDFFile(filePath: string): Promise<PDFDocum
   
   const data = new Uint8Array(fs.readFileSync(absolutePath));
   
-  // Configure PDF.js with standard font data URL for Node.js
+  // Configure PDF.js for Node.js text extraction
   const pdf = await pdfjs.getDocument({
     data,
-    standardFontDataUrl: 'node_modules/pdfjs-dist/standard_fonts/',
-    useSystemFonts: false,
+    useSystemFonts: true,
+    disableFontFace: true,
   }).promise;
   
   const pages: PDFPage[] = [];
