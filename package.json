@@ -17,14 +17,14 @@
   "homepage": "https://www.pdf-diff.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jamesmontemagno/pdf-diff"
+    "url": "git+https://github.com/jamesmontemagno/pdf-diff.git"
   },
   "author": "James Montemagno",
   "license": "MIT",
   "private": false,
   "type": "module",
   "bin": {
-    "pdf-diff": "./dist-cli/cli.mjs"
+    "pdf-diff": "dist-cli/cli.mjs"
   },
   "files": [
     "dist-cli"
